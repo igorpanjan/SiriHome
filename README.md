@@ -86,10 +86,9 @@ Just to be clear about the difference between Homebridge and NodeRed. Homebridge
 It took me some time to figure everything out, the way my Siri control is usable and it works. And all this work wouldn't be possible without people sharing their work and creating awsome stuff. I gathered bits and pieces of information all around the Internet, but these guys deserve extra credit and a big **thank you**! 
 
 
-* https://github.com/nfarina/homebridge
-* https://twitter.com/khaost
-* https://github.com/KhaosT/HAP-NodeJS
-* https://www.npmjs.com/package/homebridge-custom-http
-* https://www.npmjs.com/package/homebridge-system-plugin
+* [nfarina](https://github.com/nfarina/homebridge)
+* [khaost](https://github.com/KhaosT/HAP-NodeJS)
+* [einarzt ](https://www.npmjs.com/package/homebridge-custom-http)
+* [itsfrosty](https://www.npmjs.com/package/homebridge-system-plugin)
 * Mitsubishi HVAC control is based on Vincent Cruvellier's work [Ref1](https://www.analysir.com/blog/2015/01/06/reverse-engineering-mitsubishi-ac-infrared-protocol/) and [Ref2](https://github.com/r45635/HVAC-IR-Control)
-* ESP web server parsing multiple URL parameters is base on Nuno Santos's [work](https://techtutorialsx.wordpress.com/2016/10/22/esp8266-webserver-getting-query-parameters/)
+* ESP web server parsing multiple URL parameters is based on Nuno Santos's [work](https://techtutorialsx.wordpress.com/2016/10/22/esp8266-webserver-getting-query-parameters/)
