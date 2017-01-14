@@ -16,6 +16,8 @@ Before I went down DIY road, I looked at smart home market, what can I actually 
 * Lighting and window shading: Gira KNX devices connected to Loxone Miniserver
 * Measuring temperature and humidity inside a room
 
+![Hardware and Software](https://github.com/igorpanjan/SiriHome/blob/master/Home%20Network%20Topography.002.png)
+
 ## Control your devices
 
 ### Samsung TV
