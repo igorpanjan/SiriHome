@@ -79,5 +79,5 @@ I went with DHT22 temperature and humidity sensor and Particle Photon. You can e
 
 
 ## Siri voice controll VS. Unified remote app
-Just to be clear about the difference between Homebridge and NodeRed. Homebridge is a solution, that enables you to controll your devices through Siri - so that you have voice command. NodeRed is a service, where you can glue different services, IoT devices into centrilized environment and create new functionalities, in my example web app with centrilized controll for all my devices. Both solutions can run on RaspberryPI at the same time. 
+Just to be clear about the difference between Homebridge and NodeRed. Homebridge is a solution, that enables you to controll your devices through Siri - so that you have voice command. NodeRed is a service, where you can glue different services, IoT devices into centrilized environment and create new functionalities, in my example web app with centrilised control for all my devices. Both solutions can run on RaspberryPI at the same time. 
 
