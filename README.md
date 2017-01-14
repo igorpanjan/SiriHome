@@ -14,48 +14,70 @@ Before I went down DIY road, I looked at smart home market, what can I actually 
 * Lighting and window shading: Gira KNX devices connected to Loxone Miniserver
 * Measuring temperature and humidity inside a room
 
-
-## Electronic devices
-* RaspberyPI 2 or 3 or similar small computer as long as it runs Linux
-* Particle Photon - particle.io
-* ESP8266 12e Node MCU - find it on AliExpress
-* IR leds
-* DHT22 temperature and humidity sensor
-* Resistor pack
-* BC547b transistors
-* Breadboards
-* breadboard wire pack - go for all combinations - male/male, male/female, female/female
-* Mini USB cables and adapters - more is better ;)
-* Loxone Miniserver
-
-
-## Software
-* Homebridge: it is a database, that supports Apple HomeKit protocol and it talks with Siri - https://github.com/nfarina/homebridge
-* Homebridge plugins: plugins give Homebridge functionality and interaction with an outside world - our IoT devices - https://www.npmjs.com/browse/keyword/homebridge-plugin
-* NodeRed: JavaScript LEGO for IoT devices. - https://nodered.org/
-* Arduino IDE: you will need this to program ESPs - https://www.arduino.cc/
-* Particle IDE: you will need this to program Photons - go for Local IDE - https://www.particle.io/products/development-tools/particle-local-ide
-* Etcher: burn disk images to SD card, the easy way - https://etcher.io/
-
 ## Control your devices
 
-### TV Samsung 48UE6400
-With TV I need to control power, volume, source (HDMI1, HMDI2, etc.) and key position. I have explored LibCEC and IR control. LibCEC was a mixed bag - some commands work (TV ON/Off), most of them did not. I could also go with RS232 via audio headphones port on the back of TV, but it would be an overkill, since I needed no feedback on a status of device (TV is usually not a device you interact remotly, because you sit in front of it). So IR control should be ok.
+### Samsung TV
+I own 48UE6400 model. With TV I need to control power, volume, source (HDMI1, HMDI2, etc.) and key position. I have explored LibCEC and IR control. LibCEC was a mixed bag - some commands work (TV ON/Off), most of them did not. I could also go with RS232 via audio headphones port on the back of TV, but it would be an overkill, since I needed no feedback on a status of device (TV is usually not a device you interact remotly, because you sit in front of it). So IR control should be ok. Please check TV folder for more details.
 
-I went with RaspberryPI 2, LIRC, a transistor and IR diode. It works like a charm. Please check TV folder for details.
+#### Hardware
+* RaspberryPI 2/3. Every board with Linux should work.
+* Small breadboard
+* IR diode (944nm)
+* BC547 or similar transistor
+
+#### Software
+* LIRC - drive IR diode
+* NodeRed - for my Unified Remote App
+* [Homebridge-System-Plugin](https://www.npmjs.com/package/homebridge-system-plugin) - I am using Homebridge for Siri voice controll
 
 
 ### IPTV Setup box Arris VIP1113
-Work in progress. I am waitng for IR sensor, to capture IR signal. Setup box will also be controlled via the same RaspberryPi and IR diode as TV. The only thing that is going to be different is Lirc config file, that drives setup box. 
+Still work in progress. I am waitng for IR sensor, to capture IR signals. Setup box will also be controlled via the same RaspberryPi and IR diode as TV. The only thing that is going to be different is Lirc config file, that drives setup box. 
 
 
 ### Mitsubishi HVAC MFZ-KA
-Mitsubishi falls in the same category as Samsung TVs - hard to controll, beacuse it is a closed system. But in last couple of months people hacked IR codes, serial protocol and a part of REST protocol. In the first phase to control Mitsubishi HVAC I went with ESP8266 and IR diode. It is funny actually, because WiFi modules from Mitsubishi cost 80 EURs per module and I have control for 4 EURs. It works without any problems, but I do not have any feedback on a status of the device. So if I want to start my Mitsubishi from work, I do not really know, did it start or not. That is why I am upgrading IR control to serial control. Plase check HVAC folder for details. 
+Mitsubishi falls in the same category as Samsung TVs - hard to controll, beacuse it is a closed system. But in last couple of months people hacked IR codes, serial protocol and a part of REST protocol. In the first phase to control Mitsubishi HVAC I went with ESP8266 and IR diode. It is funny actually, because WiFi modules from Mitsubishi cost 80 EURs per module (I own 2) and I have control for 4 EURs. It works without any problems, but I do not have any feedback on a status of the device. So if I want to start my Mitsubishi from work, I do not really know, did it start or not. That is why I am upgrading IR control to serial control. Plase check HVAC folder for details.
+
+
+#### Hardware
+* ESP8266 12e Node MCU - this ESPs come with on board USB to serial chip, so they are really easy to interact with
+* IR diode (944nm)
+* Small breadboard
+* BC547 or similar transistor
+
+
+#### Software
+* custom firmware on ESP - it is basically a web server, that accepts custom URLs
+* I am using Arduino IDE to program ESPs
+* Homebridge HTTP plugin - there are a lot of HTTP plugins, so pick yours
 
 
 ### Lighting and window control and shading
 When I moved into my appartment it already had a Gira KNX switches inside. Gira offers some server solutions for remote control, but their solutions are pricy and functionalities are poor in comparison to modern competitors. KNX is a great, bullet proof protocol, but it does not come cheap. I went with Loxone Miniserver as a central hub for KNX devices (lighting, window shading, windows open/close) that exposes KNX devices to the network and Homebridge. Please check Lighting folder for details.
 
 
+#### Hardware
+* Loxone Miniserver - this guys make affordable home server. It even comes in a wireless version. So if you are in position, that you have to combine legacy systems (Gira and similar) with new solutions (Apple, Samsung, Domotics,...) Homeserver is my top choice. [Loxone](https://www.loxone.com/enen/).
+* Just to be clear - I am using Loxone only as KNX to Network gateway. Once you expose KNX devices as URL, you can controll them in any app of your choice.
+
+
+#### Software
+* Loxone has a great configuration tool [Loxone Config](https://www.loxone.com/enen/products/loxone-config/). It only runs on Windows, so some Parallels or VMWare could come in handy, if you are on a Mac.
+* Homebridge HTTP plugin
+
 ### Measuring temperature and humidity
 I went with DHT22 temperature and humidity sensor and Particle Photon. You can easily expose temperature and humidity to the network and Homebridge, with just a couple of lines of code. Plase check TempHum folder for details.
+
+#### Hardware
+* [Particle Photon](https://www.particle.io/) - just love these guys.
+* DMT22 with on-board resistor. You can get them on AliExpress.
+
+#### Software
+* Particle IDE - I am using local IDE. It is an Atom IDE with Particle customization. Super easy to work with, simple UI and UX.
+* Particle Cloud - I am exposing temperature and humidity into cloud, so that I can access them with variuos services. 
+* [Homebridge-Particle](https://www.npmjs.com/package/homebridge-particle) plugin
+
+
+## Siri voice controll VS. Unified remote app
+Just to be clear about the difference between Homebridge and NodeRed. Homebridge is a solution, that enables you to controll your devices through Siri - so that you have voice command. NodeRed is a service, where you can glue different services, IoT devices into centrilized environment and create new functionalities, in my example web app with centrilized controll for all my devices. Both solutions can run on RaspberryPI at the same time. 
+
