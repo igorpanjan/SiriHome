@@ -1,5 +1,5 @@
 # SiriHome
-Everything at home, should be voice commanded
+Everything at home, should be voice controled
 
 My home is full of devices from TVs, ACs, IPTV boxes, light switches, etc. and I have to push gazillion buttons to make them work. We live in 2017 and it should be fairly easy to control everything by voice. So this is why I'm working on a solution to control everything in my home through Apple Siri. Secondary goal I have is to have a unified remote controll for all my devices - this feature is especially handy for guests.
 
