@@ -1,0 +1,295 @@
+{
+    "bridge": {
+        "name": "HomebridgePI",
+        "username": "CD:22:3D:E3:CE:30",
+        "port": 51826,
+        "pin": "031-45-156"
+    },
+    
+    "description": "The Onion!",
+
+    "platforms": [
+	{
+            "platform": "Particle",
+            "name": "Particle Devices",
+			"access_token": "YOUR_ACCESS_TOKEN",
+			"cloudurl": "https://api.spark.io/v1/devices/",
+			"devices": [
+				{
+					"accessory": "ParticleLight",
+					"name": "Desk Lamp",
+				    	"deviceid": "YOUR_DEVICE_ID",
+					"type": "LIGHT",
+					"function_name": "led",
+					"args": "on"
+				},
+				{
+					"accessory": "LivingroomTemperature",
+					"name": "Living room Temperature",
+				    	"deviceid": "YOUR_DEVICE_ID",
+					"type": "SENSOR",
+					"sensorType": "temperature",
+					"key": "temperature",
+					"event_name": "HKSValues"
+				},
+				{
+					"accessory": "LivingroomHumidity",
+					"name": "Living room Humidity",
+				    	"deviceid": "YOUR_DEVICE_ID",
+					"type": "SENSOR",
+					"sensorType": "humidity",
+					"key": "humidity",
+					"event_name": "HKSValues"
+				}]
+			}],
+
+    "accessories": [
+        {
+            "accessory": "Http",
+            "name": "Living Room",
+            "on_url": "http://USER_NAME:PASSWORD@192.168.1.27/dev/sps/io/0af25dfc-031c-35f5-ffff112233445566/on",
+            "on_body": "{\"state\":\"On\"}",
+            "off_url": "http://USER_NAME:PASSWORD@192.168.1.27/dev/sps/io/0af25dfc-031c-35f5-ffff112233445566/off",
+            "off_body": "{\"state\":\"Off\"}",
+	    "username": "USER_NAME",
+	    "password": "PASSWORD",
+	    "brightness_url": "",
+            "http_method": "POST",
+            "http_brightness_method": "POST",
+			"service": "Switch",
+			"brightnessHandling": "no"
+  },
+	{
+            "accessory": "Http",
+            "name": "Bathroom",
+            "on_url": "http://USER_NAME:PASSWORD@192.168.1.27/dev/sps/io/0af25e9f-000f-6752-ffff112233445566/on",
+            "on_body": "{\"state\":\"On\"}",
+            "off_url": "http://USER_NAME:PASSWORD@192.168.1.27/dev/sps/io/0af25e9f-000f-6752-ffff112233445566/off",
+            "off_body": "{\"state\":\"Off\"}",
+	    "username": "USER_NAME",
+	    "password": "PASSWORD",
+	    "brightness_url": "",
+            "http_method": "POST",
+            "http_brightness_method": "POST",
+			"service": "Switch",
+			"brightnessHandling": "no"
+  },
+	{
+            "accessory": "Http",
+            "name": "Kitchen",
+            "on_url": "http://USER_NAME:PASSWORD@192.168.1.27/dev/sps/io/0af25d6d-0261-1483-ffff112233445566/on",
+            "on_body": "{\"state\":\"On\"}",
+            "off_url": "http://USER_NAME:PASSWORD@192.168.1.27/dev/sps/io/0af25d6d-0261-1483-ffff112233445566/off",
+            "off_body": "{\"state\":\"Off\"}",
+	    "username": "USER_NAME",
+	    "password": "PASSWORD",
+	    "brightness_url": "",
+            "http_method": "POST",
+            "http_brightness_method": "POST",
+			"service": "Switch",
+			"brightnessHandling": "no"
+  },
+	{
+            "accessory": "Http",
+            "name": "Dining Room",
+            "on_url": "http://USER_NAME:PASSWORD@192.168.1.27/dev/sps/io/0af23039-0186-25ec-ffffeee000d81ad6/on",
+            "on_body": "{\"state\":\"On\"}",
+            "off_url": "http://USER_NAME:PASSWORD@192.168.1.27/dev/sps/io/0af23039-0186-25ec-ffffeee000d81ad6/off",
+            "off_body": "{\"state\":\"Off\"}",
+	    "username": "USER_NAME",
+	    "password": "PASSWORD",
+	    "brightness_url": "",
+            "http_method": "POST",
+            "http_brightness_method": "POST",
+			"service": "Switch",
+			"brightnessHandling": "no"
+  },
+	{
+            "accessory": "Http",
+            "name": "Sleeping Room Left",
+            "on_url": "http://USER_NAME:PASSWORD@192.168.1.27/dev/sps/io/0af25e54-02ce-4d9c-ffff112233445566/on",
+            "on_body": "{\"state\":\"On\"}",
+            "off_url": "http://USER_NAME:PASSWORD@192.168.1.27/dev/sps/io/0af25e54-02ce-4d9c-ffff112233445566/off",
+            "off_body": "{\"state\":\"Off\"}",
+	    "username": "USER_NAME",
+	    "password": "PASSWORD",
+	    "brightness_url": "",
+            "http_method": "POST",
+            "http_brightness_method": "POST",
+			"service": "Switch",
+			"brightnessHandling": "no"
+  },
+	{
+            "accessory": "Http",
+            "name": "Sleeping Room Right",
+            "on_url": "http://USER_NAME:PASSWORD@192.168.1.27/dev/sps/io/0af25e57-03d8-4f3e-ffff112233445566/on",
+            "on_body": "{\"state\":\"On\"}",
+            "off_url": "http://USER_NAME:PASSWORD@192.168.1.27/dev/sps/io/0af25e57-03d8-4f3e-ffff112233445566/off",
+            "off_body": "{\"state\":\"Off\"}",
+	    "username": "USER_NAME",
+	    "password": "PASSWORD",
+	    "brightness_url": "",
+            "http_method": "POST",
+            "http_brightness_method": "POST",
+			"service": "Switch",
+			"brightnessHandling": "no"
+  },
+	{
+            "accessory": "Http",
+            "name": "Sleeping Room",
+            "on_url": "http://USER_NAME:PASSWORD@192.168.1.27/dev/sps/io/0af25e52-0138-4bfb-ffff112233445566/on",
+            "on_body": "{\"state\":\"On\"}",
+            "off_url": "http://USER_NAME:PASSWORD@192.168.1.27/dev/sps/io/0af25e52-0138-4bfb-ffff112233445566/off",
+            "off_body": "{\"state\":\"Off\"}",
+	    "username": "USER_NAME",
+	    "password": "PASSWORD",
+	    "brightness_url": "",
+            "http_method": "POST",
+            "http_brightness_method": "POST",
+			"service": "Switch",
+			"brightnessHandling": "no"
+  },
+	{
+            "accessory": "Http",
+            "name": "Blinds Living Room",
+            "on_url": "http://USER_NAME:PASSWORD@192.168.1.27/dev/sps/io/0af25fa7-02bf-9cc6-ffff112233445566/DownOn",
+            "on_body": "{\"state\":\"On\"}",
+            "off_url": "http://USER_NAME:PASSWORD@192.168.1.27/dev/sps/io/0af25fa7-02bf-9cc6-ffff112233445566/UpOn",
+            "off_body": "{\"state\":\"Off\"}",
+	    "username": "USER_NAME",
+	    "password": "PASSWORD",
+	    "brightness_url": "",
+            "http_method": "POST",
+            "http_brightness_method": "POST",
+			"service": "Switch",
+			"brightnessHandling": "no"
+  },
+	{
+            "accessory": "Http",
+            "name": "Blinds Kitchen",
+            "on_url": "http://USER_NAME:PASSWORD@192.168.1.27/dev/sps/io/0af25ff8-032c-af02-ffff112233445566/DownOn",
+            "on_body": "{\"state\":\"On\"}",
+            "off_url": "http://USER_NAME:PASSWORD@192.168.1.27/dev/sps/io/0af25ff8-032c-af02-ffff112233445566/UpOn",
+            "off_body": "{\"state\":\"Off\"}",
+	    "username": "USER_NAME",
+	    "password": "PASSWORD",
+	    "brightness_url": "",
+            "http_method": "POST",
+            "http_brightness_method": "POST",
+			"service": "Switch",
+			"brightnessHandling": "no"
+  },
+	{
+            "accessory": "Http",
+            "name": "Blinds Sleeping Room",
+            "on_url": "http://USER_NAME:PASSWORD@192.168.1.27/dev/sps/io/0af236f0-038a-7159-ffff112233445566/DownOn",
+            "on_body": "{\"state\":\"On\"}",
+            "off_url": "http://USER_NAME:PASSWORD@192.168.1.27/dev/sps/io/0af236f0-038a-7159-ffff112233445566/UpOn",
+            "off_body": "{\"state\":\"Off\"}",
+	    "username": "USER_NAME",
+	    "password": "PASSWORD",
+	    "brightness_url": "",
+            "http_method": "POST",
+            "http_brightness_method": "POST",
+			"service": "Switch",
+			"brightnessHandling": "no"
+  },
+	{
+            "accessory": "Http",
+            "name": "Mitsubishi hot",
+            "on_url": "http://192.168.1.216/genericArgs?HvacMode=1&temp=26&HvacFanMode=3&HvacVanneMode=3&HvacStatus=0",
+            "on_body": "{\"state\":\"On\"}",
+            "off_url": "http://192.168.1.216/genericArgs?HvacMode=1&temp=26&HvacFanMode=3&HvacVanneMode=3&HvacStatus=1",
+            "off_body": "{\"state\":\"Off\"}",
+	    "username": "",
+	    "password": "",
+	    "brightness_url": "",
+            "http_method": "GET",
+            "http_brightness_method": "POST",
+			"service": "Switch",
+			"brightnessHandling": "no"
+  },
+	{
+            "accessory": "Http",
+            "name": "Heating slow",
+            "on_url": "http://192.168.1.216/genericArgs?HvacMode=1&temp=26&HvacFanMode=1&HvacVanneMode=3&HvacStatus=0",
+            "on_body": "{\"state\":\"On\"}",
+            "off_url": "http://192.168.1.216/genericArgs?HvacMode=1&temp=26&HvacFanMode=1&HvacVanneMode=3&HvacStatus=1",
+            "off_body": "{\"state\":\"Off\"}",
+	    "username": "",
+	    "password": "",
+	    "brightness_url": "",
+            "http_method": "GET",
+            "http_brightness_method": "POST",
+			"service": "Switch",
+			"brightnessHandling": "no"
+  },
+	{
+            "accessory": "Http",
+            "name": "Heating fast",
+            "on_url": "http://192.168.1.216/genericArgs?HvacMode=1&temp=26&HvacFanMode=5&HvacVanneMode=3&HvacStatus=0",
+            "on_body": "{\"state\":\"On\"}",
+            "off_url": "http://192.168.1.216/genericArgs?HvacMode=1&temp=26&HvacFanMode=5&HvacVanneMode=3&HvacStatus=1",
+            "off_body": "{\"state\":\"Off\"}",
+	    "username": "",
+	    "password": "",
+	    "brightness_url": "",
+            "http_method": "GET",
+            "http_brightness_method": "POST",
+			"service": "Switch",
+			"brightnessHandling": "no"
+  },
+	{
+            "accessory": "Http",
+            "name": "Heating middle",
+            "on_url": "http://192.168.1.216/genericArgs?HvacMode=1&temp=26&HvacFanMode=3&HvacVanneMode=3&HvacStatus=0",
+            "on_body": "{\"state\":\"On\"}",
+            "off_url": "http://192.168.1.216/genericArgs?HvacMode=1&temp=26&HvacFanMode=3&HvacVanneMode=3&HvacStatus=1",
+            "off_body": "{\"state\":\"Off\"}",
+	    "username": "",
+	    "password": "",
+	    "brightness_url": "",
+            "http_method": "GET",
+            "http_brightness_method": "POST",
+			"service": "Switch",
+			"brightnessHandling": "no"
+  },
+	{
+		"accessory": "systemCallAccessory",
+		"name": "TV Power",
+		"on_system_call": "sudo irsend SEND_ONCE samsung KEY_POWER",
+		"off_system_call": "sudo irsend SEND_ONCE samsung KEY_POWER"
+	},
+	{
+		"accessory": "systemCallAccessory",
+		"name": "TV Volume",
+		"on_system_call": "sudo irsend SEND_ONCE samsung KEY_VOLUMEUP",
+		"off_system_call": "sudo irsend SEND_ONCE samsung KEY_VOLUMEDOWN"
+	},
+	{
+		"accessory": "systemCallAccessory",
+		"name": "TV Source",
+		"on_system_call": "sudo irsend SEND_ONCE samsung SOURCE"
+	},
+	{
+		"accessory": "systemCallAccessory",
+		"name": "TV Right Cursor",
+		"on_system_call": "sudo irsend SEND_ONCE samsung KEY_RIGHT"
+	},
+	{
+		"accessory": "systemCallAccessory",
+		"name": "TV Left Cursor",
+		"on_system_call": "sudo irsend SEND_ONCE samsung KEY_LEFT"
+	},
+	{
+		"accessory": "systemCallAccessory",
+		"name": "TV OK",
+		"on_system_call": "sudo irsend SEND_ONCE samsung KEY_OK"
+	},
+	{
+		"accessory": "systemCallAccessory",
+		"name": "TV Back",
+		"on_system_call": "sudo irsend SEND_ONCE samsung KEY_BACK"
+	}
+    ]
+}
