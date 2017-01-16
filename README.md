@@ -6,7 +6,7 @@ My home is full of devices from TVs, ACs, IPTV boxes, light switches, etc. and I
 Before I went down DIY road, I looked at smart home market, what can I actually buy to make it work. At the end I came to realize, that there simply aren't any manufacturers, that offer standardized solution. Whether they have their own closed standards, apps that don't work, or I would have to spend a lot of money on a compromise. So the only way to actually make it work is DIY way. And it is also price / performance efficient - I have spent in a range of 100 EUR for all materials, that make every devices work the way I want them to work. In comparison - I would have to spend couple of 1000s to make it half work - just Logitech Harmony is 350 EUR and it fixes 10% of problems I want to solve. 
 
 
-![Home Network Topography](https://github.com/igorpanjan/SiriHome/blob/master/Home%20Network%20Topography_001.png)
+![Home Network Topography](https://github.com/igorpanjan/SiriHome/blob/master/Home%20Network%20Topography_001.png?raw=true)
 
 ## Voice controll / Unified remote controll target devices or features
 
